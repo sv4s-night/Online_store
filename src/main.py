@@ -1,46 +1,5 @@
-class Product:  # task
-    name: str
-    description: str    # описание
-    price: float
-    quantity: str       # количество в наличии
-
-    def __init__(self, name, description, price, quantity):
-        self.name = name
-        self.description = description
-        self.price = price
-        self.quantity = quantity
-
-
-
-class Category:     # user
-    name: str
-    description: str
-    products: list
-
-    category_count = 0  # количество категорий
-    product_count = 0   # количество товаров
-
-
-    def __init__(self, name, description, products):
-        self.name = name
-        self.description = description
-        self.products = products
-
-
-        Category.category_count += 1
-        Category.product_count += 1
-
-        """
-        Атрибуты класса должны заполняться автоматически при инициализации нового объекта.
-        Здесь нет необходимости считать количество на складе, можно посчитать длину списка с товарами.
-        """
-
-
-        self.task_list = task_list if task_list else []
-        # для вычисления 2х параметров мы обращаемся к классу User и к самой переменной которую надо вычислить (user_count, all_tasks_count)
-        User.users_count += 1  # будет увеличиваться на 1 при каждой инициализации экземпляра класса User
-        User.all_tasks_count += len(task_list) if task_list else 0
-
+from src.product import Product
+from src.category import Category
 
 
 
