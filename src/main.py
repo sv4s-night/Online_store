@@ -40,8 +40,8 @@ class Category:
     description: str
     products: list
 
-    category_count = 0
-    product_count = 0
+    category_count = 0  # количество категорий
+    product_count = 0   # количество товаров
 
 
     def __init__(self, name, description, products):
@@ -54,6 +54,7 @@ class Category:
         # для вычисления 2х параметров мы обращаемся к классу User и к самой переменной которую надо вычислить (user_count, all_tasks_count)
         User.users_count += 1  # будет увеличиваться на 1 при каждой инициализации экземпляра класса User
         User.all_tasks_count += len(task_list) if task_list else 0
+
 
 
 """ Задание 2
@@ -136,7 +137,8 @@ if __name__ == "__main__":
     print(product3.quantity)
 
     category1 = Category("Смартфоны",
-                         "Смартфоны, как средство не только коммуникации, но и получения дополнительных функций для удобства жизни",
+                         "Смартфоны, как средство не только коммуникации, "
+                         "но и получения дополнительных функций для удобства жизни",
                          [product1, product2, product3])
 
     print(category1.name == "Смартфоны")
@@ -147,7 +149,8 @@ if __name__ == "__main__":
 
     product4 = Product("55\" QLED 4K", "Фоновая подсветка", 123000.0, 7)
     category2 = Category("Телевизоры",
-                         "Современный телевизор, который позволяет наслаждаться просмотром, станет вашим другом и помощником",
+                         "Современный телевизор, который позволяет наслаждаться просмотром, "
+                         "станет вашим другом и помощником",
                          [product4])
 
     print(category2.name)
