@@ -1,8 +1,6 @@
 from src.product import Product
 from src.category import Category
-
-
-
+from src.utils import data_json, create_object
 
 
 if __name__ == "__main__":
@@ -49,3 +47,11 @@ if __name__ == "__main__":
 
     print(Category.category_count)
     print(Category.product_count)
+
+
+    # * Дополнительное задание
+    info = data_json("../data/products.json")
+    new = create_object(info)
+
+    print(new[1].name)
+    print(new[1].description)

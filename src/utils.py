@@ -1,4 +1,7 @@
 import json
+from src.product import Product
+from src.category import Category
+
 
 
 def data_json(path: str) -> list[dict:dict]:
@@ -14,4 +17,13 @@ def data_json(path: str) -> list[dict:dict]:
         return []
 
 
-
+def create_object(data):
+    """Функция создающая объект класса"""
+    prod = []
+    for i in data:
+        desc = []
+        for j in i["products"]:
+            desc.append(Product(**j))
+        i["products"] = desc
+        prod.append(Category(**i))
+    return prod
