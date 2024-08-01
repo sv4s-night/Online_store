@@ -19,11 +19,11 @@ def data_json(path: str) -> list[dict:dict]:
 
 def create_object(data):
     """Функция создающая объект класса"""
-    prod = []
-    for i in data:
+    products = []
+    for category in data:
         desc = []
-        for j in i["products"]:
-            desc.append(Product(**j))
-        i["products"] = desc
-        prod.append(Category(**i))
-    return prod
+        for product in category["products"]:
+            desc.append(Product(**product))
+        category["products"] = desc
+        products.append(Category(**category))
+    return products

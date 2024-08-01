@@ -1,8 +1,8 @@
-class Product:  # task
+class Product:
     name: str
-    description: str    # описание
+    description: str
     price: float
-    quantity: str       # количество в наличии
+    quantity: str
 
     def __init__(self, name, description, price, quantity):
         self.name = name
