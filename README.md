@@ -90,9 +90,8 @@
 
 ### Контакт для связи с командой разработки:
 
-<img src="https://github.com/sv4s-night/Online_store/blob/future_14_1/data/Logo.jpg?raw=true" width="250" height="200">
+<img src="https://github.com/sv4s-night/Online_store/blob/future_14_1/data/Logo.jpg?raw=true" width="221" height="161">
 
-![Logo.jpg](https://github.com/sv4s-night/Online_store/blob/future_14_1/data/Logo.jpg?raw=true)
 
 `sv4s-night@gmail.com` 🌒
 
