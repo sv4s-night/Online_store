@@ -14,7 +14,6 @@ class Category:
         Category.product_count += 1
         Category.category_count += len(products)
 
-
     """ Задание 1
 Для класса Category сделайте список товаров приватным атрибутом, чтобы к нему нельзя было получить доступ извне. 
 Для добавления товаров в категорию реализуйте специальный метод add_product() в классе Category, 
@@ -26,10 +25,8 @@ class Category:
 мы создаем специальный метод, который позволит добавлять продукты в категории.
     """
 
-
     def add_product(self, products):
         self.__products.append(products)
-
 
     @property
     def products(self):

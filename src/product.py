@@ -1,23 +1,18 @@
 class Product:
     name: str
     description: str
-    price: float
+    __price: float
     quantity: str
 
     def __init__(self, name, description, price, quantity):
         self.name = name
         self.description = description
-        self.price = price
+        self.__price = price
         self.quantity = quantity
 
 
-
-    def add_product(self):
-        pass
-
-
-
-    """ Задание 3
+    """
+     Задание 3
 Для класса Product необходимо создать класс-метод new_product, который будет принимать на вход параметры товара в
  словаре и возвращать созданный объект класса Product
     
@@ -37,6 +32,21 @@ class Product:
 Речь идет о работе со списком товаров, которые уже были добавлены. Не бойтесь передавать новые атрибуты в класс-методы, 
 которые создаете. Проверка товара заключается в переборе имеющегося списка товаров и сравнения названий.
     """
+
+    @classmethod
+    def new_product(cls, product_dict):
+        existing_products = []
+
+        for product in existing_products:
+            if product.name == product_dict['name']:
+                product.quantity += product_dict['quantity']
+                product.price = max(product.price, product_dict['price'])
+                return product
+
+        new_product = cls(product_dict['name'], product_dict['description'], product_dict['price'],
+                          product_dict['quantity'])
+        existing_products.append(new_product)
+        return new_product
 
 
     """ Задание 4
@@ -63,6 +73,26 @@ class Product:
 Расширяем прошлую задачу и предоставляем пользователю большую защиту от введения некорректной цены. Обратите внимание, 
 что логика защиты срабатывает, когда цена просто ниже прошлой.
     """
+
+
+
+    @property
+    def price(self):
+        return self.__price
+
+    @price.setter
+    def price(self, new_price):
+        if new_price <= 0:
+            print("Цена не должна быть нулевая или отрицательная.")
+        else:
+            confirmation = input("Вы подтверждаете изменение цены? (y/n): ")
+            if confirmation.lower() == 'y':
+                self.__price = new_price
+                print("Цена успешно обновлена.")
+            else:
+                print("Изменение цены отменено.")
+
+
 
     """ Задание 5
 Напишите тесты для нового функционала. При этом убедитесь что тесты, которые были написаны ранее выполняются без ошибок.
